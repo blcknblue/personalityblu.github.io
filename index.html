@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>blacknblue | Personality Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="http://fonts.cdnfonts.com/css/sf-pixelate" rel="stylesheet"> -->
+
+</head>
+<body>
+	<div id="canvas" class="canvas">
+		<div id="firstpage">
+			<label class="mbti" id="mbti">MBTI </label></br>
+			<label class="pt_text">Personality </br>Test</label></br>	
+			<button class="btn_starttest" onclick="StartTest()"> Start Test </button>
+		</div>
+
+		<div class="questions" id="questions" style="display: none;">
+			<div id="quest_one">
+				<label class="qtext">How do others see you?</label></br>
+				<button value="E" class="btn" onclick="QuestionOne()">I am seen as outgoing and people peron.</button></br>
+				<button value="I" class="btn" onclick="QuestionOne()">I am seen as reflective and reserved.</button>
+			</div>
+
+			<div id="quest_two" style="display: none;">
+				<label class="qtext">What is your work preference?</label></br>
+				<button value="E" class="btn" onclick="QuestionTwo()">I feel comfortable working in groups and like working with them.</button></br>
+				<button value="I" class="btn" onclick="QuestionTwo()">I feel comfortable working alone and doing things I can do on my own.</button>
+			</div>
+
+			<div id="quest_three" style="display: none;">
+				<label class="qtext">You had a tough workweek. How do you unwind on weekends?</label></br>
+				<button value="E" class="btn" onclick="QuestionThree()">Calling up some friends to party and hangout.</button></br>
+				<button value="I" class="btn" onclick="QuestionThree()">Staying at home to read my favorite book, lay on the couch or watch favorite shows.</button>
+			</div>
+
+
+			<div id="quest_four" style="display: none;">
+				<label class="qtext">How do you make decisions?</label></br>
+				<button value="S" class="btn" onclick="QuestionFour()">I rely more on logic and data.</button></br>
+				<button value="N" class="btn" onclick="QuestionFour()">I rely more on gut feelings and possibilities</button>
+			</div>
+
+			<div id="quest_five" style="display: none;">
+				<label class="qtext">You are given a set of instructions for a task at work. Which do you prefer?</label></br>
+				<button value="S" class="btn" onclick="QuestionFive()">I prefer to follow the steps precisely as they are written.</button></br>
+				<button value="N" class="btn" onclick="QuestionFive()">I look for alternative ways to approach the task and improvise as I go along.</button>
+			</div>
+
+			<div id="quest_six" style="display: none;">
+				<label class="qtext">You are watching a film with a complex plot. Where do you see yourself?</label></br>
+				<button value="S" class="btn" onclick="QuestionSix()">I find myself paying attention to the plot and details and try to piece together the characters’ motives and actions.</button></br>
+				<button value="N" class="btn" onclick="QuestionSix()">I find myself drawn to the overall themes and underlying symbolism.</button>
+			</div>
+
+
+			<div id="quest_seven" style="display: none;">
+				<label class="qtext">How do you handle conflicts or disagreement with others?</label></br>
+				<button value="T" class="btn" onclick="QuestionSeven()">I try to come up with a logical and objective solution.</button></br>
+				<button value="F" class="btn" onclick="QuestionSeven()">I prioritize maintaining harmony and keeping everyone happy.</button>
+			</div>
+
+			<div id="quest_eight" style="display: none;">
+				<label class="qtext">You are deciding whether or not to accept a job offer. How do you decide?</label></br>
+				<button value="T" class="btn" onclick="QuestionEight()">I decide on how much I will earn.</button></br>
+				<button value="F" class="btn" onclick="QuestionEight()">I decide on how fulfilled and satisfied the job would make me feel.</button>
+			</div>
+
+			<div id="quest_nine" style="display: none;">
+				<label class="qtext">Someone close to you is going through a tough time. How do you show your support?</label></br>
+				<button value="T" class="btn" onclick="QuestionNine()">I will be more likely to offer practical solution to their problems.</button></br>
+				<button value="F" class="btn" onclick="QuestionNine()">I will provide emotional support and a listening ear.</button>
+			</div>
+
+
+			<div id="quest_ten" style="display: none;">
+				<label class="qtext">You are planning a vacation. What do you prefer?</label></br>
+				<button value="J" class="btn" onclick="QuestionTen()">I prefer to have itinerary with every activity and restaurant planned out.</button></br>
+				<button value="P" class="btn" onclick="QuestionTen()">I prefer to go with the flow and make decisions based on how I feel in the moment.</button>
+			</div>
+
+			<div id="quest_eleven" style="display: none;">
+				<label class="qtext">You’re at a restaurant and the server asks for your order</label></br>
+				<button value="J" class="btn" onclick="QuestionEleven()">I already know what I want.</button></br>
+				<button value="P" class="btn" onclick="QuestionEleven()">I take a few minutes to look over the menu and consider my options before making a decision.</button>
+			</div>
+
+			<div id="quest_twelve" style="display: none;">
+				<label class="qtext">Your boss gives you a project deadline that is two weeks away.</label></br>
+				<button value="J" class="btn" onclick="QuestionTwelve()">I immediately start working on it.</button></br>
+				<button value="P" class="btn" onclick="QuestionTwelve()">I wait until closer to the deadline to begin.</button>
+			</div>
+
+			<div class="progressbar" id="progressbar">
+				<label class="progress" id="progress">1/12</label>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="mbti_result" class="result" style="display: none;">
+		<img src="" alt="MBTI Result" id="result" />
+	</div>
+
+	<div id="info">
+		<label class="contact">Feel free to contact me with any questions or comments:</label></br> 
+		<label class="contact"> blacknblue1819@gmail.com</label></br>
+		<label class="note">Disclaimer:</label></br>
+		<label class="note">All contents are provided for fun and entertainment only.</label></br>
+	</div>
+
+
+	<footer id="footer">
+		<label class="footertext">Copyright &copy;2023 blacknblue</label>
+	</footer>
+
+<script src="functions.js"></script>
+</body>
+</html>
